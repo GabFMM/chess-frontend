@@ -1,0 +1,46 @@
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+
+    background-color: rgb(97, 47, 18);
+    height: 100vh;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.text{
+    margin: 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+    text-align: center;
+
+    background-color: rgb(221, 114, 51);
+    border-radius: 0.5vw;
+}
+
+p{
+    font-size: 1rem;
+}
+
+button{
+    margin-left: 10%;
+    margin-right: 10%;
+
+    background-color: rgb(255, 170, 121);
+    border: 0;
+    border-radius: 0.5vw;
+    font-size: 1rem;
+}
+
+button:hover{
+    color: white;
+    background-color: rgb(46, 22, 8);
+}
