@@ -1,0 +1,83 @@
+<section class="config-match">
+    <h1>Configurações do jogo</h1>
+
+    <form [formGroup]="configForm" (ngSubmit)="submitForm()">
+        <fieldset>
+            <legend>Relógio</legend>
+
+            <div class="radio-group">
+                <span>Usar tempo?</span>
+
+                <label class="radio-option" for="hasTimeSim">
+                    <input type="radio" id="hasTimeSim" formControlName="hasTime" [value]="true">
+                    Sim
+                </label>
+
+                <label class="radio-option" for="hasTimeNao">
+                    <input type="radio" id="hasTimeNao" formControlName="hasTime" [value]="false">
+                    Não
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tempo das brancas</legend>
+
+            <div class="time-grid">
+                <label>
+                    Minutos
+                    <input type="number" formControlName="whiteTimeMin" min="0" max="120" step="1">
+                </label>
+
+                <label>
+                    Segundos
+                    <input type="number" formControlName="whiteTimeSec" min="0" max="59" step="1">
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tempo das pretas</legend>
+
+            <div class="time-grid">
+                <label>
+                    Minutos
+                    <input type="number" formControlName="blackTimeMin" min="0" max="120" step="1">
+                </label>
+
+                <label>
+                    Segundos
+                    <input type="number" formControlName="blackTimeSec" min="0" max="59" step="1">
+                </label>
+            </div>
+        </fieldset>
+
+        <label class="field">
+            Acréscimo (segundos)
+            <input type="number" formControlName="increment" min="0" max="180" step="1">
+        </label>
+
+        <fieldset>
+            <legend>Tabuleiro</legend>
+
+            <div class="radio-group">
+                <span>Rotacionar tabuleiro?</span>
+
+                <label class="radio-option" for="rotateSim">
+                    <input type="radio" id="rotateSim" formControlName="rotate" [value]="true">
+                    Sim
+                </label>
+
+                <label class="radio-option" for="rotateNao">
+                    <input type="radio" id="rotateNao" formControlName="rotate" [value]="false">
+                    Não
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="actions">
+            <button type="reset">Limpar</button>
+            <button type="submit">Aplicar</button>
+        </div>
+    </form>
+</section>

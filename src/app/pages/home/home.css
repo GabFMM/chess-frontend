@@ -1,0 +1,101 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 8vw, 7rem);
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 2rem;
+    background-color: rgb(97, 47, 18);
+}
+
+.home-piece {
+    width: clamp(140px, 24vw, 260px);
+    filter: drop-shadow(0 18px 28px rgba(46, 22, 8, 0.42));
+}
+
+.home-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: min(92vw, 380px);
+    padding: 1.5rem;
+    color: rgb(46, 22, 8);
+    background-color: rgb(221, 114, 51);
+    border: 2px solid rgb(255, 170, 121);
+    border-radius: 8px;
+    box-shadow: 0 18px 42px rgba(46, 22, 8, 0.35);
+}
+
+.home-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h1,
+p {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    padding: 0.55rem 1rem;
+    background-color: rgb(255, 170, 121);
+    border-radius: 8px;
+    font-size: clamp(2rem, 6vw, 3rem);
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.home-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+button,
+a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.6rem;
+    padding: 0 1rem;
+    color: rgb(46, 22, 8);
+    background-color: rgb(255, 170, 121);
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover,
+a:hover {
+    color: white;
+    background-color: rgb(46, 22, 8);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+    .home {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .home {
+        padding: 1rem;
+    }
+
+    .home-panel {
+        padding: 1rem;
+    }
+}
