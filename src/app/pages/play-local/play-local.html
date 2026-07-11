@@ -1,3 +1,8 @@
 <main>
-    <app-config-match></app-config-match>
+    @if(!isConfigured()){
+        <app-config-match (configured)="createMatch($event)"></app-config-match>
+    }
+    @else {
+
+    }
 </main>

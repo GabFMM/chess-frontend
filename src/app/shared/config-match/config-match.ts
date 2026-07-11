@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -34,6 +34,8 @@ export class ConfigMatch {
             rotate: new FormControl<boolean | null>(false, Validators.required)
         }
     )
+
+    protected configured = output<boolean>();
 
     ngOnInit(): void {
         this.configForm.get("hasTime")?.valueChanges.subscribe(value => {
@@ -78,6 +80,6 @@ export class ConfigMatch {
     }
 
     protected submitForm(){
-        
+        this.configured.emit(true);
     }
 }

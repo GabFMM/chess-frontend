@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ConfigMatch } from '../../shared/config-match/config-match';
 
 @Component({
@@ -8,5 +8,9 @@ import { ConfigMatch } from '../../shared/config-match/config-match';
     styleUrl: './play-local.css',
 })
 export class PlayLocal{
-    
+    protected isConfigured = signal(false);
+
+    protected createMatch(configured: boolean){
+        this.isConfigured.set(configured);
+    }
 }
