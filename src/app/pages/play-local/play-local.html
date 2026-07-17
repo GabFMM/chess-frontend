@@ -3,6 +3,25 @@
         <app-config-match (configured)="createMatch($event)"></app-config-match>
     }
     @else {
+        <div id="menuOptions" [class.open]="menuOpen">
+            <button id="options" (click)="onOptionsClicked()"></button>
 
+            <div id="menuList">
+                <button class="menuButton" (click)="onPauseContinueClicked()">
+                    @if(isPaused()){
+                        Continuar
+                    }
+                    @else{
+                        Pausar
+                    }
+                </button>
+                <button 
+                    class="menuButton"
+                    routerLink="/home">
+                    Voltar
+                </button>
+            </div>
+        </div>
+        <app-chessboard></app-chessboard>
     }
 </main>

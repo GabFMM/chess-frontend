@@ -1,0 +1,29 @@
+<div id="match">
+    <div class="black clock"></div>
+
+    <div 
+        id="chessboard"
+        (focusin)="onChessboardFocusIn($event)"
+    >
+        @for (row of chessboardModel.getSquares(); track $index; let rowIndex = $index) {
+            @for (square of row; track square.getId(); let colIndex = $index) {
+                <div
+                    [id]="chessboardService.convertToNotation(rowIndex, colIndex)" 
+                    class='square'
+                    [class.white]="(rowIndex + colIndex) % 2 === 0"
+                    [class.black]="(rowIndex + colIndex) % 2 === 1"
+                >
+                    @if (square.getPiece()) {
+                        <img
+                            [src]="getPieceImage(square)"
+                            [alt]='"square.getPiece()!.color" + " " + "square.getPiece().name"'
+                            tabindex="0" // Permite focar na peça
+                        >
+                    }
+                </div>
+            }
+        }
+    </div>
+
+    <div class="white clock"></div>
+</div>

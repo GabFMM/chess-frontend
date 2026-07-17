@@ -7,3 +7,65 @@ main {
     padding: 2rem;
     background-color: rgb(97, 47, 18);
 }
+
+#menuOptions {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgb(221, 114, 51);
+    width: 15vw;
+    height: 100vh;
+
+    transform: translateX(-100%);
+    transition: transform .5s;
+}
+
+#menuOptions.open {
+    transform: translateX(0);
+}
+
+#options {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+
+    background-color: rgb(221, 114, 51);
+    height: 80px;
+    width: 80px;
+
+    border: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+    transition: transform .5s;
+    cursor: pointer
+}
+
+#options:hover{
+    transform: translateX(25%);
+}
+
+#menuList{
+    position: relative;
+    top: 20%;
+    margin: auto;
+
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.menuButton{
+    background-color: rgb(255, 170, 121);
+    border: 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.menuButton:hover{
+    color: white;
+    background-color: rgb(46, 22, 8);
+}

@@ -1,0 +1,51 @@
+#match{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2vh;
+
+    width: min(70vw, 560px);
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    width: min(70vw, 560px);
+    aspect-ratio: 1 / 1;
+
+    border: 2vw solid rgb(46, 22, 8);
+    border-radius: 2%;
+}
+
+.square {
+    width: 100%;
+    height: 100%;
+}
+
+.square:focus-within{
+    box-shadow: inset 0 0 0 6px rgb(221, 114, 51);
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+    cursor: pointer
+}
+
+.clock {
+    height: 5vh;
+    width: 25%;
+}
